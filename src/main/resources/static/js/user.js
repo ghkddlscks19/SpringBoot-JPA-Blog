@@ -20,19 +20,19 @@ let index = {
         $.ajax({
             // 회원강비 수행 요청
             type: "POST",
-            url: "/blog/api/user",
+            url: "/auth/joinProc",
             data: JSON.stringify(data), // http body데이터
             contentType: "application/json; charset=utf-8",
             dataType: "json" // 요청을 서버로해서 응답이 왔을 때 모든 것이 문자열 (생긴게 json이라면) => javascript오브젝트로 변경
         }).done(function (resp) {
             alert("회원가입이 완료되었습니다.");
             // console.log(resp);
-            location.href = "/blog";
+            location.href = "/";
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });
 
-    }
+    },
 }
 
 index.init();
