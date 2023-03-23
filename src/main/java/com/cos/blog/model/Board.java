@@ -30,7 +30,7 @@ public class Board {
 
     private int count; // 조회수
 
-    @ManyToOne // Many = Board, User = One
+    @ManyToOne(fetch = FetchType.EAGER) // Many = Board, User = One
     @JoinColumn(name = "userId")
     private User user; // DB는 오브젝트를 저장할 수 없다. FK, 자바는 오브젝트를 저장할 수 있다.
 
